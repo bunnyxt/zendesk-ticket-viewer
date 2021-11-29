@@ -1,0 +1,8 @@
+# frontend
+ztv-frontend/node_modules
+
+# backend
+ztv-backend/venv
+
+# others
+.DS_Store
