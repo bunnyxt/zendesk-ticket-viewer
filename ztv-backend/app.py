@@ -6,7 +6,7 @@ import urllib3
 import json
 
 # create flask app
-app = Flask(__name__, static_url_path='', static_folder='../ztv-frontend/dist')
+app = Flask(__name__, static_url_path='', static_folder='../ztv-frontend/build')
 CORS(app)
 
 # these constant variables would be parsed from args
@@ -18,14 +18,10 @@ DOMAIN = 'domain'
 http = urllib3.PoolManager()
 
 
+# return frontend page
 @app.route('/')
 def root():
     return app.send_static_file('index.html')
-
-
-@app.route('/favicon.ico')
-def favicon():
-    return app.send_static_file('favicon.ico')
 
 
 # fetch all tickets, 25 per page
@@ -48,7 +44,7 @@ def fetch_tickets():
     })
 
 
-# fetch ticket via ticket id
+# fetch ticket via ticket id (actually not used in the frontend)
 @app.route('/api/tickets/<ticket_id>')
 def fetch_ticket_via_ticket_id(ticket_id):
     url = 'https://%s.zendesk.com/api/v2/tickets/%s.json' % (DOMAIN, ticket_id)
