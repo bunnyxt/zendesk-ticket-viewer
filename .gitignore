@@ -1,5 +1,6 @@
 # frontend
 ztv-frontend/node_modules
+ztv-frontend/build
 
 # backend
 ztv-backend/venv
