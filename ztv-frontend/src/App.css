@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.ErrorMessage {
+  padding: 12px;
+  background-color: rgb(255, 217, 0);
+}
