@@ -10,6 +10,12 @@ This Zendesk Ticket Viewer will show 25 tickets per page, and can go next or pre
 
 ![ztv-2.png](ztv-2.png)
 
+The backend service will return ticket with given ticket id (`/api/tickets/<ticket-id>`) or return all tickets (`/api/tickets`, 25 per page, use `page=2` to continue).
+
+Both frontend and backend could handle error returned from Zendesk API (ex. invalid credential) and the backend service. Backend will return HTTP code 500 to indicate there some error occurred and frontend will detect it, then show prompt message.
+
+![ztv-3.png](ztv-3.png)
+
 ## Environment
 
 In this project, I use Python Flask to implement backend service and use React.js to create a simple frontend page.
